@@ -1,3 +1,5 @@
+/* Fuentes */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
@@ -9,6 +11,114 @@
     font-family: 'Title';
     src: url('/south-park-font/SouthParkSmilieVersion-YVVO.ttf') format('truetype');
 }
+
+/* VAR */
+
+:root {
+    --box-shadow: 0 0 10px 4px #3336;
+    --color-primary: #D500DB;
+    --color-secondary: #3300a1;
+}
+
+/* Settings */
+
+.settings {
+    position: absolute;
+    min-width: 50px;
+    background-color: #fff;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    z-index: 1000;
+    top: 10px;
+    left: 10px;
+    transition: all .25s;
+}
+
+.settings:hover {
+    background-color: var(--color-primary);
+}
+
+.settings svg {
+    width: 30px;
+    height: 30px;
+    transition: all .25s;
+}
+
+.settings svg.active {
+    transform: rotate(90deg);
+}
+
+.settings svg:hover {
+    fill: #fff;
+}
+
+.settings-content {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.settings-content h1{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.settings-content.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-content .color-select {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.settings-content .selector {
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 3px 0 #3338;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.settings-content .selector:hover {
+    transform: scale(1.05);
+    filter: grayscale(50%);
+}
+
+.settings-content .selector::after {
+    content: 'O';
+    font-size: 30px;
+    height: 100%;
+    opacity: 0;
+    font-family: 'Pokemon', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .25s;
+}
+
+.settings-content .selector:hover::after {
+    opacity: 1;
+}
+
+/* Estilo Calculadora */
 
 .poppins-regular {
     font-family: "Poppins", sans-serif;
@@ -24,6 +134,7 @@
 }
 
 .container {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
