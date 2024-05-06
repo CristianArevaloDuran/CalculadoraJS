@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #7546DB;
+    opacity: .6;
+}
+
+.calculadora {
+    background-color: #fff4;
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px 4px #3336;
+    backdrop-filter: blur(100px);
+    backdrop-filter: opacity(.3);
+    min-width: 400px;
+}
+
+.calculadora .header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.calculadora .header h1 {
+    font-size: 20px;
+    color: #000f;
+    margin-right: 10px;
+}
+
+.calculadora .header .imgcontainer {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.calculadora .header img {
+    width: 100px;
+    height: 100px;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: 0 auto;
+}
+
+.calculadora .display {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.calculadora .display input {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    background-color: #fffb;
+    box-shadow: 0 0 5px 0 #3338;
+}
+
+.calculadora .keys button {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 15px;
+    background-color: #fffb;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 4px 0 #333;
+    transition: all .25s;
+}
+
+.calculadora .keys button:nth-child(17), .calculadora .keys button:nth-child(18) {
+    grid-column: span 2;
+    color: #fff;
+    background-color: #3300a1;
+}
+
+.calculadora .keys button:hover {
+    background-color: #D500DB;
+    color: #fff;
+    box-shadow: 0 0 0 0 #3338;
+    transform: scale(1.06);
+}
