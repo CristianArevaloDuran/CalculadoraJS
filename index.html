@@ -6,17 +6,20 @@
     <title>Calculadora</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="" type="image/x-icon" id="pageIco">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="container">
         <div class="calculadora">
-            <div class="header">
-                <div class="imgcontainer">
-                    <img src="" alt="" id="pokemon" draggable="false">
-                </div>
-                <div class="data">
-                    <h1>Calculadora</h1>
-                    <p id="pName"></p>
+            <div class="header" >
+                <div class="containerD">
+                    <div class="imgcontainer">
+                        <img src="ZKZg.gif" alt="" id="pokemon" draggable="false">
+                    </div>
+                    <div class="data">
+                        <h1>Calculadora</h1>
+                        <p id="pName">Loading...</p>
+                    </div>
                 </div>
             </div>
             <div class="display">
@@ -30,7 +33,7 @@
                 <button class="key" onclick="addNumber('4')">4</button>
                 <button class="key" onclick="addNumber('5')">5</button>
                 <button class="key" onclick="addNumber('6')">6</button>
-                <button class="key" onclick="addOperator('*')">*</button>
+                <button class="key" onclick="addOperator('*')">x</button>
                 <button class="key" onclick="addNumber('1')">1</button>
                 <button class="key" onclick="addNumber('2')">2</button>
                 <button class="key" onclick="addNumber('3')">3</button>
@@ -39,8 +42,14 @@
                 <button class="key" onclick="addNumber('.')">.</button>
                 <button class="key" onclick="calculate()">=</button>
                 <button class="key" onclick="addOperator('+')">+</button>
-                <button class="key" onclick="clearDisplay()">C</button>
-                <button class="key" onclick="clearDisplay()">Del</button>
+                <button class="key" onclick="clearDisplay()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                    C
+                </button>
+                <button class="key" onclick="clearDisplay()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M360-200q-20 0-37.5-9T294-234L120-480l174-246q11-16 28.5-25t37.5-9h400q33 0 56.5 23.5T840-680v400q0 33-23.5 56.5T760-200H360Zm400-80v-400 400Zm-400 0h400v-400H360L218-480l142 200Zm96-40 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Z"/></svg>
+                    Del
+                </button>
             </div>
         </div>
     </div>
