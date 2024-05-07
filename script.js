@@ -40,13 +40,42 @@ document.querySelector('.settings').addEventListener('click', () => {
     document.querySelector('.settings svg').classList.toggle('active');
 });
 
+document.getElementById('copy').addEventListener('click', () => {
+    let copyText = display.value;
+    navigator.clipboard.writeText(copyText);
+});
+
 // Funciones de calculo
 
-/*function addNumber(num) {
-    number += num;
-    document.getElementById('display').value = number;
-}*/
+const display = document.getElementById('display');
+
+function addNumber(num) {
+    display.value += num;
+    display.scrollLeft = display.scrollWidth;
+}
+
+function addOperator(op) {
+    display.value += op;
+    display.scrollLeft = display.scrollWidth;
+}
+
+function calculate() {
+    try {
+        display.value = eval(display.value);
+        display.scrollLeft = display.scrollWidth;
+    }
+    catch {
+        display.value = 'Error';
+        display.scrollLeft = display.scrollWidth;
+    }
+}
 
 function clearDisplay() {
-    document.getElementById('display').value = '';
+    display.value = '';
+    display.scrollLeft = display.scrollWidth;
+}
+
+function delDisplay() {
+    display.value = display.value.slice(0, -1);
+    display.scrollLeft = display.scrollWidth;
 }

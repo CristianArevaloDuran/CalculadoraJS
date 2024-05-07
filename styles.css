@@ -41,20 +41,19 @@
 
 .settings:hover {
     background-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 3px 0 #000;
+    fill: #fff;
 }
 
 .settings svg {
     width: 30px;
     height: 30px;
-    transition: all .25s;
+    transition: transform .25s, fill .1s;
 }
 
 .settings svg.active {
     transform: rotate(90deg);
-}
-
-.settings svg:hover {
-    fill: #fff;
 }
 
 .settings-content {
@@ -229,17 +228,68 @@
 
 .calculadora .display {
     width: 100%;
+    position: relative;
     height: 100px;
     margin-bottom: 20px;
 }
 
 .calculadora .display input {
+    position: relative;
+    cursor: pointer;
     height: 100%;
     width: 100%;
     border-radius: 20px;
     border: none;
     background-color: #fffb;
     box-shadow: 0 0 5px 0 #3338;
+    font-size: 20px;
+    text-align: right;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #000;
+    word-wrap: break-word;
+}
+
+.calculadora .display .after {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff4;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 0 #3338;
+    transition: all .25s;
+}
+
+.calculadora .display .after:hover {
+    background-color: #111;
+}
+
+.calculadora .display .after::after {
+    content: 'Copiar';
+    position: absolute;
+    font-size: 20px;
+    width: 100%;
+    font-weight: bold;
+    height: 100%;
+    opacity: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .25s;
+    color: #fff;
+    border-radius: 20px;
+    background-color: #000d;
+    z-index: 2000;
+}
+
+.calculadora .display .after:hover::after {
+    opacity: 1;
 }
 
 .calculadora .keys button {
